@@ -108,10 +108,10 @@ const Pricing = () => {
                   Most Popular
                 </div>
               )}
-              <div className={`h-full p-8 rounded-2xl border transition-smooth shadow-soft hover:shadow-strong ${
+              <div className={`h-full p-8 rounded-2xl transition-smooth ${
                 plan.popular 
-                  ? 'bg-gradient-card border-primary/50 hover:border-primary' 
-                  : 'bg-card border-border hover:border-primary/50'
+                  ? 'glass-card neo-card-inset border-primary/50 hover:border-primary shadow-strong' 
+                  : 'glass-card neo-card hover:neo-card-inset hover:border-primary/50'
               }`}>
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                 <p className="text-muted-foreground text-sm mb-6">{plan.description}</p>

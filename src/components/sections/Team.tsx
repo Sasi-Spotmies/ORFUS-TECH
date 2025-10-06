@@ -61,7 +61,7 @@ const Team = () => {
               whileHover={{ y: -12 }}
               className="group"
             >
-              <div className="rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-smooth shadow-soft hover:shadow-medium">
+              <div className="rounded-2xl overflow-hidden glass-card neo-card hover:neo-card-inset hover:border-primary/50 transition-smooth">
                 <div className={`h-64 bg-gradient-to-br ${member.gradient} relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-smooth" />
                   <motion.div
@@ -71,7 +71,7 @@ const Team = () => {
                   >
                     <motion.a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-smooth"
+                      className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-smooth"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -79,7 +79,7 @@ const Team = () => {
                     </motion.a>
                     <motion.a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-smooth"
+                      className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-smooth"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -87,7 +87,7 @@ const Team = () => {
                     </motion.a>
                   </motion.div>
                 </div>
-                <div className="p-6 text-center">
+                <div className="p-6 text-center bg-card/50 backdrop-blur-sm">
                   <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
                   <p className="text-muted-foreground">{member.role}</p>
                 </div>

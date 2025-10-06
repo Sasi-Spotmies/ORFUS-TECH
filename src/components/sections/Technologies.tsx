@@ -66,9 +66,9 @@ const Technologies = () => {
               whileHover={{ scale: 1.1, y: -5 }}
               className="group"
             >
-              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-smooth shadow-soft hover:shadow-medium flex flex-col items-center justify-center aspect-square gradient-card">
+              <div className="p-6 rounded-xl glass-card neo-card hover:neo-card-inset hover:border-primary/50 transition-smooth flex flex-col items-center justify-center aspect-square">
                 <div
-                  className="w-12 h-12 rounded-lg mb-4 group-hover:scale-110 transition-bounce"
+                  className="w-12 h-12 rounded-lg mb-4 group-hover:scale-110 transition-bounce shadow-medium"
                   style={{ backgroundColor: tech.color + '20' }}
                 />
                 <span className="font-medium text-center">{tech.name}</span>

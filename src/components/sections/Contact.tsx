@@ -61,9 +61,9 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className="flex items-center gap-4"
+                className="flex items-center gap-4 p-4 rounded-xl glass-card neo-card hover:neo-card-inset transition-smooth"
               >
-                <div className="p-3 rounded-xl bg-gradient-primary">
+                <div className="p-3 rounded-xl bg-gradient-primary shadow-medium">
                   <info.icon className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -80,14 +80,14 @@ const Contact = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 p-8 rounded-2xl glass-card neo-card">
               <div className="relative">
                 <Input
                   type="text"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="h-12 bg-card border-border focus:border-primary transition-smooth"
+                  className="h-12 glass-card border-border focus:border-primary transition-smooth"
                   required
                 />
               </div>
@@ -98,7 +98,7 @@ const Contact = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="h-12 bg-card border-border focus:border-primary transition-smooth"
+                  className="h-12 glass-card border-border focus:border-primary transition-smooth"
                   required
                 />
               </div>
@@ -108,14 +108,14 @@ const Contact = () => {
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="min-h-[150px] bg-card border-border focus:border-primary transition-smooth resize-none"
+                  className="min-h-[150px] glass-card border-border focus:border-primary transition-smooth resize-none"
                   required
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full h-12 bg-gradient-primary hover:opacity-90 text-white group"
+                className="w-full h-12 bg-gradient-primary hover:opacity-90 text-white group shadow-medium"
               >
                 Send Message
                 <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />

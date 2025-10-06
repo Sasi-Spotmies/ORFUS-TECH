@@ -91,17 +91,17 @@ const Portfolio = () => {
               whileHover={{ y: -12 }}
               className="group"
             >
-              <div className="h-full rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-smooth shadow-soft hover:shadow-strong">
+              <div className="h-full rounded-2xl overflow-hidden glass-card neo-card hover:neo-card-inset hover:border-primary/50 transition-smooth">
                 <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-smooth" />
                   <motion.div
-                    className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-smooth"
+                    className="absolute top-4 right-4 w-10 h-10 rounded-full glass-card flex items-center justify-center opacity-0 group-hover:opacity-100 transition-smooth"
                     whileHover={{ scale: 1.1 }}
                   >
                     <ExternalLink className="h-5 w-5 text-white" />
                   </motion.div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 bg-card/50 backdrop-blur-sm">
                   <div className="text-sm text-primary font-medium mb-2">{project.category}</div>
                   <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
                   <p className="text-muted-foreground">{project.description}</p>

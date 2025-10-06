@@ -18,7 +18,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="glass-card border-t border-border/50">
       <div className="container mx-auto px-4 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
@@ -27,9 +27,9 @@ const Footer = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4"
+              className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4 tracking-wider"
             >
-              TechNova
+              ORFUS
             </motion.h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Transforming businesses through innovative IT solutions. 
@@ -41,7 +41,7 @@ const Footer = () => {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-lg bg-muted hover:bg-primary/10 flex items-center justify-center transition-smooth group"
+                  className="w-10 h-10 rounded-lg glass-card neo-card hover:neo-card-inset flex items-center justify-center transition-smooth group"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -78,9 +78,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} TechNova Solutions. All rights reserved.
+            © {currentYear} ORFUS Solutions. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-primary transition-smooth">Privacy</a>

@@ -35,16 +35,6 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 backdrop-blur-sm border border-primary/20 mb-8"
-          >
-            <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium text-foreground/80">Welcome to the Future of IT</span>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,7 +64,7 @@ const Hero = () => {
           >
             <Button
               size="lg"
-              className="group bg-gradient-primary hover:opacity-90 text-white shadow-medium transition-smooth"
+              className="group bg-gradient-primary hover:opacity-90 text-white shadow-strong transition-smooth"
             >
               Get Started
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
@@ -82,7 +72,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-primary/30 hover:border-primary hover:bg-primary/5 transition-smooth"
+              className="glass-card neo-card hover:neo-card-inset border-primary/30 hover:border-primary transition-smooth"
             >
               View Our Work
             </Button>

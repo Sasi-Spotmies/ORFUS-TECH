@@ -50,7 +50,7 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            About <span className="bg-gradient-primary bg-clip-text text-transparent">TechNova</span>
+            About <span className="bg-gradient-primary bg-clip-text text-transparent">ORFUS</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We are a team of passionate technologists, designers, and strategists dedicated to transforming businesses through innovative digital solutions. With over a decade of experience, we've helped hundreds of companies navigate their digital transformation journey.
@@ -69,8 +69,8 @@ const About = () => {
               variants={item}
               className="relative group"
             >
-              <div className="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-smooth shadow-soft hover:shadow-medium gradient-card">
-                <div className="inline-flex p-3 rounded-xl bg-gradient-primary mb-6 group-hover:scale-110 transition-bounce">
+              <div className="p-8 rounded-2xl glass-card neo-card hover:neo-card-inset hover:border-primary/50 transition-smooth">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-primary mb-6 group-hover:scale-110 transition-bounce shadow-medium">
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>

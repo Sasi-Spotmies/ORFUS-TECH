@@ -100,8 +100,8 @@ const Services = () => {
               whileHover={{ y: -8 }}
               className="group"
             >
-              <div className="h-full p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-smooth shadow-soft hover:shadow-medium gradient-card">
-                <div className="inline-flex p-3 rounded-xl bg-gradient-primary mb-6 group-hover:scale-110 transition-bounce">
+              <div className="h-full p-8 rounded-2xl glass-card neo-card hover:neo-card-inset hover:border-primary/50 transition-smooth">
+                <div className="inline-flex p-3 rounded-xl bg-gradient-primary mb-6 group-hover:scale-110 transition-bounce shadow-medium">
                   <service.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{service.title}</h3>

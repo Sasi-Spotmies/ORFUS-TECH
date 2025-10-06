@@ -79,7 +79,7 @@ const Testimonials = () => {
               whileHover={{ y: -8 }}
               className="group"
             >
-              <div className="h-full p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-smooth shadow-soft hover:shadow-medium gradient-card relative">
+              <div className="h-full p-8 rounded-2xl glass-card neo-card hover:neo-card-inset hover:border-primary/50 transition-smooth relative">
                 <Quote className="absolute top-6 right-6 h-12 w-12 text-primary/10 group-hover:text-primary/20 transition-smooth" />
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (

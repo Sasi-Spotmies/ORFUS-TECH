@@ -43,10 +43,19 @@ All colors MUST be HSL.
     --gradient-hero: linear-gradient(180deg, hsl(220 25% 98%) 0%, hsl(235 50% 95%) 100%);
     --gradient-card: linear-gradient(135deg, hsla(235 85% 65% / 0.05) 0%, hsla(270 75% 70% / 0.05) 100%);
     
+    /* Glassmorphism & Neomorphism tokens */
+    --glass-light: hsla(0 0% 100% / 0.4);
+    --glass-border: hsla(255 255% 255% / 0.18);
+    --neo-shadow-1: 8px 8px 16px hsla(235 50% 50% / 0.15);
+    --neo-shadow-2: -8px -8px 16px hsla(0 0% 100% / 0.7);
+    --neo-inset-1: inset 2px 2px 5px hsla(235 50% 50% / 0.1);
+    --neo-inset-2: inset -2px -2px 5px hsla(0 0% 100% / 0.5);
+    
     /* Shadow tokens */
     --shadow-soft: 0 4px 20px hsla(235 85% 65% / 0.08);
     --shadow-medium: 0 8px 30px hsla(235 85% 65% / 0.12);
     --shadow-strong: 0 12px 40px hsla(235 85% 65% / 0.16);
+    --shadow-glass: 0 8px 32px 0 hsla(235 85% 65% / 0.15);
     
     /* Animation tokens */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -103,10 +112,20 @@ All colors MUST be HSL.
     --gradient-hero: linear-gradient(180deg, hsl(230 30% 8%) 0%, hsl(235 40% 12%) 100%);
     --gradient-card: linear-gradient(135deg, hsla(235 85% 65% / 0.08) 0%, hsla(270 75% 70% / 0.08) 100%);
     
+    /* Glassmorphism & Neomorphism tokens - Dark */
+    --glass-light: hsla(230 28% 15% / 0.5);
+    --glass-border: hsla(255 255% 255% / 0.1);
+    --neo-shadow-1: 8px 8px 16px hsla(230 30% 5% / 0.5);
+    --neo-shadow-2: -8px -8px 16px hsla(230 28% 18% / 0.2);
+    --neo-inset-1: inset 2px 2px 5px hsla(230 30% 5% / 0.3);
+    --neo-inset-2: inset -2px -2px 5px hsla(230 28% 18% / 0.1);
+    
     /* Dark mode shadows */
     --shadow-soft: 0 4px 20px hsla(235 85% 65% / 0.15);
     --shadow-medium: 0 8px 30px hsla(235 85% 65% / 0.2);
     --shadow-strong: 0 12px 40px hsla(235 85% 65% / 0.25);
+    --shadow-glass: 0 8px 32px 0 hsla(235 85% 65% / 0.25);
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -146,6 +165,22 @@ All colors MUST be HSL.
     background: var(--gradient-card);
   }
   
+  .glass-card {
+    background: var(--glass-light);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .neo-card {
+    box-shadow: var(--neo-shadow-1), var(--neo-shadow-2);
+  }
+  
+  .neo-card-inset {
+    box-shadow: var(--neo-inset-1), var(--neo-inset-2);
+  }
+  
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
@@ -156,6 +191,10 @@ All colors MUST be HSL.
   
   .shadow-strong {
     box-shadow: var(--shadow-strong);
+  }
+  
+  .shadow-glass {
+    box-shadow: var(--shadow-glass);
   }
   
   .transition-smooth {

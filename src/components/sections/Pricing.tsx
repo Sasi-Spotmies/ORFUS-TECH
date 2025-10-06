@@ -74,8 +74,16 @@ const Pricing = () => {
   };
 
   return (
-    <section id="pricing" ref={ref} className="py-24 lg:py-32 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="pricing" ref={ref} className="relative overflow-hidden py-24 lg:py-32 bg-gradient-to-b from-background via-accent/30 to-background">
+      {/* Background layers */}
+      <div className="aurora-layer">
+        <div className="aurora-blob aurora-blob--1" />
+        <div className="aurora-blob aurora-blob--2" />
+        <div className="aurora-blob aurora-blob--3" />
+      </div>
+      <div className="glow-ring" />
+
+      <div className="relative z-10 container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -83,7 +91,7 @@ const Pricing = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Transparent <span className="bg-gradient-primary bg-clip-text text-transparent">Pricing</span>
+            Transparent <span className="text-gradient-brand">Pricing</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Choose the plan that fits your needs. All plans include premium support.
@@ -104,7 +112,7 @@ const Pricing = () => {
               className="relative group"
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-primary text-white text-sm font-medium rounded-full">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-card border-2 border-primary/50 z-50 text-gradient-brand text-sm font-medium rounded-full">
                   Most Popular
                 </div>
               )}
@@ -122,10 +130,10 @@ const Pricing = () => {
                 <Button 
                   className={`w-full mb-8 ${
                     plan.popular 
-                      ? 'bg-gradient-primary hover:opacity-90 text-white' 
-                      : 'border-2 border-primary/30 hover:border-primary hover:bg-primary/5'
+                      ? 'bg-gradient-primary hover:opacity-90 border-2 border-primary/60 hover:border-primary'
+                      : 'border-2 border-primary/50 hover:border-primary hover:bg-primary/5'
                   }`}
-                  variant={plan.popular ? 'default' : 'outline'}
+                  variant={plan.popular ? 'outline' : 'outline'}
                 >
                   Get Started
                 </Button>

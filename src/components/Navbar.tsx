@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,12 +18,32 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.href.replace('#', ''));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] }
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+    return () => observer.disconnect();
+  }, []);
+
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Team', href: '#team' },
-    { name: 'Pricing', href: '#pricing' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -29,8 +51,8 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-card' : 'bg-transparent'
+      className={`fixed top-0 left-0  right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'glass-card border-b border-border backdrop-blur-xl' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -51,7 +73,11 @@ const Navbar = () => {
               <motion.a
                 key={link.name}
                 href={link.href}
-                className="text-foreground/80 hover:text-primary transition-smooth font-medium"
+                className={`transition-smooth font-medium ${
+                  activeId === link.href.replace('#', '')
+                    ? 'text-primary'
+                    : 'text-foreground/80 hover:text-primary'
+                }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -60,6 +86,13 @@ const Navbar = () => {
                 {link.name}
               </motion.a>
             ))}
+            <Button
+              size="sm"
+              className="ml-2 bg-gradient-card border border-primary/40 hover:border-primary text-gradient-cta shadow-soft"
+              asChild
+            >
+              <a href="#contact"><span className="text-gradient-cta">Get a Quote</span></a>
+            </Button>
           </div>
 
           {/* Theme Toggle & Mobile Menu */}

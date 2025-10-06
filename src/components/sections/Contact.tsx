@@ -33,7 +33,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Get In <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
+            Get In <span className="text-gradient-brand">Touch</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Ready to start your project? Contact us today for a free consultation.

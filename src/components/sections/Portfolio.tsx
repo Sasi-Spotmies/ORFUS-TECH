@@ -62,8 +62,16 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" ref={ref} className="py-24 lg:py-32 bg-muted/30">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="portfolio" ref={ref} className="relative overflow-hidden py-24 lg:py-32 bg-gradient-to-b from-background via-background to-muted/40">
+      {/* Background layers */}
+      <div className="aurora-layer">
+        <div className="aurora-blob aurora-blob--1" />
+        <div className="aurora-blob aurora-blob--2" />
+        <div className="aurora-blob aurora-blob--3" />
+      </div>
+      <div className="glow-ring" />
+
+      <div className="relative z-10 container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -71,7 +79,7 @@ const Portfolio = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
+            Featured <span className="text-gradient-brand">Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Explore our portfolio of successful projects and transformative solutions
@@ -91,21 +99,15 @@ const Portfolio = () => {
               whileHover={{ y: -12 }}
               className="group"
             >
-              <div className="h-full rounded-2xl overflow-hidden glass-card neo-card hover:neo-card-inset hover:border-primary/50 transition-smooth">
-                <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-smooth" />
-                  <motion.div
-                    className="absolute top-4 right-4 w-10 h-10 rounded-full glass-card flex items-center justify-center opacity-0 group-hover:opacity-100 transition-smooth"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <ExternalLink className="h-5 w-5 text-white" />
-                  </motion.div>
+              <div className="h-full p-6 rounded-2xl glass-card neo-card hover:neo-card-inset hover:border-primary/50 transition-smooth">
+                <div className="text-sm text-primary font-medium mb-2">{project.category}</div>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xl font-semibold">{project.title}</h3>
+                  <button className="w-9 h-9 rounded-full glass-card flex items-center justify-center hover:scale-105 transition-smooth" aria-label="Open project">
+                    <ExternalLink className="h-4 w-4 text-foreground" />
+                  </button>
                 </div>
-                <div className="p-6 bg-card/50 backdrop-blur-sm">
-                  <div className="text-sm text-primary font-medium mb-2">{project.category}</div>
-                  <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-                  <p className="text-muted-foreground">{project.description}</p>
-                </div>
+                <p className="text-muted-foreground leading-relaxed">{project.description}</p>
               </div>
             </motion.div>
           ))}

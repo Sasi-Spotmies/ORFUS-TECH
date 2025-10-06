@@ -41,7 +41,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" ref={ref} className="py-24 lg:py-32 bg-background">
+    <section id="about" ref={ref} className="py-24 lg:py-32 bg-gradient-to-b from-accent/40 via-background to-background">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -50,7 +50,7 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            About <span className="bg-gradient-primary bg-clip-text text-transparent">ORFUS</span>
+            About <span className="text-gradient-brand">ORFUS</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We are a team of passionate technologists, designers, and strategists dedicated to transforming businesses through innovative digital solutions. With over a decade of experience, we've helped hundreds of companies navigate their digital transformation journey.

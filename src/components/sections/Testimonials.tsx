@@ -50,8 +50,16 @@ const Testimonials = () => {
   };
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section ref={ref} className="relative overflow-hidden py-24 lg:py-32 bg-gradient-to-b from-background via-background to-accent/40">
+      {/* Background layers */}
+      <div className="aurora-layer">
+        <div className="aurora-blob aurora-blob--1" />
+        <div className="aurora-blob aurora-blob--2" />
+        <div className="aurora-blob aurora-blob--3" />
+      </div>
+      <div className="glow-ring" />
+
+      <div className="relative z-10 container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -59,7 +67,7 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Client <span className="bg-gradient-primary bg-clip-text text-transparent">Testimonials</span>
+            Client <span className="text-gradient-brand">Testimonials</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Hear what our clients have to say about working with us

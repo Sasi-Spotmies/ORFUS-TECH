@@ -8,54 +8,55 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 25% 98%;
-    --foreground: 230 20% 15%;
+    /* Light theme with a visible cool tint (not white) */
+    --background: 220 45% 94%; /* soft cool blue background */
+    --foreground: 228 18% 16%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 230 20% 15%;
+    --card: 220 35% 97%;
+    --card-foreground: 228 18% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 230 20% 15%;
+    --popover: 220 35% 97%;
+    --popover-foreground: 228 18% 18%;
 
-    --primary: 235 85% 65%;
+    --primary: 235 70% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 75% 70%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 220 30% 86%; /* soft cool tint */
+    --secondary-foreground: 228 25% 20%;
 
-    --muted: 220 15% 92%;
-    --muted-foreground: 230 10% 50%;
+    --muted: 220 22% 92%;
+    --muted-foreground: 228 10% 42%;
 
-    --accent: 260 80% 68%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 220 40% 90%; /* gentle cool accent */
+    --accent-foreground: 230 30% 24%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 74% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 92%;
-    --ring: 235 85% 65%;
+    --border: 220 18% 86%;
+    --input: 220 20% 91%;
+    --ring: 235 70% 58%;
 
     --radius: 0.75rem;
     
-    /* Gradient tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(235 85% 65%) 0%, hsl(270 75% 70%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(220 25% 98%) 0%, hsl(235 50% 95%) 100%);
-    --gradient-card: linear-gradient(135deg, hsla(235 85% 65% / 0.05) 0%, hsla(270 75% 70% / 0.05) 100%);
+    /* Gradient tokens (soft but present in light mode) */
+    --gradient-primary: linear-gradient(135deg, hsl(235 70% 58% / 0.12) 0%, hsl(270 60% 65% / 0.12) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220 45% 94%) 0%, hsl(225 40% 92%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(235 70% 58% / 0.08) 0%, hsl(270 60% 65% / 0.08) 100%);
     
     /* Glassmorphism & Neomorphism tokens */
-    --glass-light: hsla(0 0% 100% / 0.4);
-    --glass-border: hsla(255 255% 255% / 0.18);
-    --neo-shadow-1: 8px 8px 16px hsla(235 50% 50% / 0.15);
-    --neo-shadow-2: -8px -8px 16px hsla(0 0% 100% / 0.7);
-    --neo-inset-1: inset 2px 2px 5px hsla(235 50% 50% / 0.1);
-    --neo-inset-2: inset -2px -2px 5px hsla(0 0% 100% / 0.5);
+    --glass-light: hsla(0, 0%, 98%, 0.7); /* tinted light card */
+    --glass-border: hsla(221, 100%, 92%, 0.3); /* nicer soft border */
+    --neo-shadow-1: 8px 8px 16px hsla(230 25% 35% / 0.08);
+    --neo-shadow-2: -8px -8px 16px hsla(0, 6%, 94%, 0.85);
+    --neo-inset-1: inset 2px 2px 5px hsla(230 20% 40% / 0.06);
+    --neo-inset-2: inset -2px -2px 5px hsla(0 0% 100% / 0.6);
     
     /* Shadow tokens */
-    --shadow-soft: 0 4px 20px hsla(235 85% 65% / 0.08);
-    --shadow-medium: 0 8px 30px hsla(235 85% 65% / 0.12);
-    --shadow-strong: 0 12px 40px hsla(235 85% 65% / 0.16);
-    --shadow-glass: 0 8px 32px 0 hsla(235 85% 65% / 0.15);
+    --shadow-soft: 0 4px 20px hsla(230 25% 40% / 0.06);
+    --shadow-medium: 0 8px 30px hsla(230 25% 40% / 0.1);
+    --shadow-strong: 0 12px 40px hsla(230 25% 40% / 0.14);
+    --shadow-glass: 0 8px 32px 0 hsla(230 25% 40% / 0.1);
     
     /* Animation tokens */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -112,19 +113,19 @@ All colors MUST be HSL.
     --gradient-hero: linear-gradient(180deg, hsl(230 30% 8%) 0%, hsl(235 40% 12%) 100%);
     --gradient-card: linear-gradient(135deg, hsla(235 85% 65% / 0.08) 0%, hsla(270 75% 70% / 0.08) 100%);
     
-    /* Glassmorphism & Neomorphism tokens - Dark */
-    --glass-light: hsla(230 28% 15% / 0.5);
-    --glass-border: hsla(255 255% 255% / 0.1);
-    --neo-shadow-1: 8px 8px 16px hsla(230 30% 5% / 0.5);
-    --neo-shadow-2: -8px -8px 16px hsla(230 28% 18% / 0.2);
-    --neo-inset-1: inset 2px 2px 5px hsla(230 30% 5% / 0.3);
-    --neo-inset-2: inset -2px -2px 5px hsla(230 28% 18% / 0.1);
+    /* Glassmorphism & Neomorphism tokens - Dark (softened) */
+    --glass-light: hsla(230 20% 14% / 0.50);
+    --glass-border: hsla(230 20% 30% / 0.45);
+    --neo-shadow-1: 8px 8px 16px hsla(230 30% 5% / 0.30);
+    --neo-shadow-2: -8px -8px 16px hsla(230 28% 18% / 0.15);
+    --neo-inset-1: inset 2px 2px 5px hsla(230 30% 5% / 0.20);
+    --neo-inset-2: inset -2px -2px 5px hsla(230 28% 18% / 0.08);
     
-    /* Dark mode shadows */
-    --shadow-soft: 0 4px 20px hsla(235 85% 65% / 0.15);
-    --shadow-medium: 0 8px 30px hsla(235 85% 65% / 0.2);
-    --shadow-strong: 0 12px 40px hsla(235 85% 65% / 0.25);
-    --shadow-glass: 0 8px 32px 0 hsla(235 85% 65% / 0.25);
+    /* Dark mode shadows (reduced brightness and spread) */
+    --shadow-soft: 0 3px 14px hsla(235 85% 65% / 0.08);
+    --shadow-medium: 0 6px 22px hsla(235 85% 65% / 0.12);
+    --shadow-strong: 0 10px 30px hsla(235 85% 65% / 0.16);
+    --shadow-glass: 0 6px 24px 0 hsla(235 85% 65% / 0.14);
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -165,8 +166,55 @@ All colors MUST be HSL.
     background: var(--gradient-card);
   }
   
+  /* CTA gradient text utility */
+  .text-gradient-cta {
+    background-image: linear-gradient(
+      135deg,
+      hsl(235 85% 65%) 0%,
+      hsl(270 75% 70%) 45%,
+      hsl(210 90% 60%) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-cta:hover {
+    filter: brightness(1.05) saturate(1.05);
+  }
+
+  /* Light theme: enhance SVG icon appearance (lucide) */
+  .light svg.lucide {
+    stroke: hsl(var(--foreground) / 0.75);
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    filter: drop-shadow(0 1px 0 hsl(0 0% 100% / 0.35))
+            drop-shadow(0 2px 6px hsl(var(--ring) / 0.12));
+    transition: var(--transition-smooth);
+  }
+  .light svg.lucide:hover {
+    stroke: hsl(var(--foreground) / 0.9);
+    filter: drop-shadow(0 1px 0 hsl(0 0% 100% / 0.4))
+            drop-shadow(0 3px 8px hsl(var(--ring) / 0.16));
+  }
+
+  /* Stronger, accessible gradient text for headings */
+  .text-gradient-brand {
+    background-image: linear-gradient(
+      135deg,
+      hsl(235 85% 60%) 0%,
+      hsl(270 80% 66%) 50%,
+      hsl(210 90% 60%) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 0 hsl(0 0% 100% / 0.05);
+  }
+  
   .glass-card {
-    background: var(--glass-light);
+    background: var(--gradient-card), var(--glass-light);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
@@ -204,4 +252,94 @@ All colors MUST be HSL.
   .transition-bounce {
     transition: var(--transition-bounce);
   }
+
+  /* --- Hero background enhancements --- */
+  @keyframes auroraShift {
+    0% { transform: translate3d(-10%, -10%, 0) scale(1); filter: hue-rotate(0deg); }
+    50% { transform: translate3d(10%, 10%, 0) scale(1.1); filter: hue-rotate(30deg); }
+    100% { transform: translate3d(-10%, -10%, 0) scale(1); filter: hue-rotate(0deg); }
+  }
+
+  @keyframes floatSlow {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+  }
+
+  @keyframes gridDrift {
+    0% { background-position: 0px 0px, 0px 0px; }
+    100% { background-position: 40px 40px, 80px 80px; }
+  }
+
+  /* Soft animated aurora backdrop */
+  .aurora-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .aurora-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.35;
+    mix-blend-mode: screen;
+    animation: auroraShift 18s ease-in-out infinite;
+  }
+
+  .aurora-blob--1 { width: 38rem; height: 38rem; left: -6rem; top: -4rem; background: radial-gradient(closest-side, hsl(var(--primary) / 0.35), transparent 70%); }
+  .aurora-blob--2 { width: 44rem; height: 44rem; right: -10rem; top: 10rem; background: radial-gradient(closest-side, hsl(var(--secondary) / 0.45), transparent 70%); animation-delay: -6s; }
+  .aurora-blob--3 { width: 36rem; height: 36rem; left: 20%; bottom: -8rem; background: radial-gradient(closest-side, hsl(var(--accent) / 0.4), transparent 70%); animation-delay: -12s; }
+
+  /* Subtle moving grid with fade */
+  .grid-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mask-image: radial-gradient(circle at 50% 50%, black 50%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 50%, transparent 100%);
+  }
+
+  .grid-bg {
+    position: absolute;
+    inset: -200% -200%;
+    background-image:
+      linear-gradient(to right, hsl(var(--foreground) / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--foreground) / 0.06) 1px, transparent 1px);
+    background-size: 40px 40px, 40px 40px;
+    animation: gridDrift 30s linear infinite;
+  }
+
+  /* Glow ring accent behind content */
+  .glow-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(78vw, 56rem);
+    height: min(78vw, 56rem);
+    border-radius: 9999px;
+    background: conic-gradient(from 0deg, hsl(235 85% 65% / 0.15), hsl(270 75% 70% / 0.15), hsl(210 90% 60% / 0.15), hsl(235 85% 65% / 0.15));
+    filter: blur(40px);
+    opacity: 0.5;
+    box-shadow: 0 0 120px 30px hsl(235 85% 65% / 0.12);
+    animation: spin 40s linear infinite;
+    pointer-events: none;
+  }
+
+  /* Dark mode: soften neon-like aurora/glow while keeping effect */
+  .dark .aurora-blob {
+    opacity: 0.22;
+    filter: blur(50px);
+  }
+  .dark .glow-ring {
+    opacity: 0.35;
+    filter: blur(36px);
+    box-shadow: 0 0 100px 24px hsl(235 85% 65% / 0.08);
+  }
+
+  @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+  .floating { animation: floatSlow 6s ease-in-out infinite; }
 }

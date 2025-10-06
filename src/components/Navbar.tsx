@@ -60,7 +60,7 @@ const Navbar = () => {
           {/* Logo */}
           <motion.a
             href="#"
-            className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent tracking-wider"
+            className="text-2xl font-bold text-gradient-logo tracking-wider"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

@@ -48,7 +48,7 @@ All colors MUST be HSL.
     --glass-light: hsla(0, 0%, 98%, 0.7); /* tinted light card */
     --glass-border: hsla(221, 100%, 92%, 0.3); /* nicer soft border */
     --neo-shadow-1: 8px 8px 16px hsla(230 25% 35% / 0.08);
-    --neo-shadow-2: -8px -8px 16px hsla(0, 6%, 94%, 0.85);
+    --neo-shadow-2: -8px -8px 16px hsla(220, 10%, 94%, 0.85);
     --neo-inset-1: inset 2px 2px 5px hsla(230 20% 40% / 0.06);
     --neo-inset-2: inset -2px -2px 5px hsla(0 0% 100% / 0.6);
     
@@ -180,6 +180,21 @@ All colors MUST be HSL.
   }
   .text-gradient-cta:hover {
     filter: brightness(1.05) saturate(1.05);
+  }
+
+  /* Distinctive logo gradient text */
+  .text-gradient-logo {
+    background-image: linear-gradient(
+      135deg,
+      hsl(210 90% 60%) 0%,
+      hsl(235 85% 65%) 40%,
+      hsl(270 80% 66%) 70%,
+      hsl(300 80% 70%) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 0 hsl(0 0% 100% / 0.08);
   }
 
   /* Light theme: enhance SVG icon appearance (lucide) */

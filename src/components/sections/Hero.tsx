@@ -45,19 +45,19 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button
               size="lg"
-              className="group glass-card neo-card border border-primary/40 hover:border-primary text-gradient-cta shadow-strong transition-smooth"
+              className="group glass-card neo-card border border-primary/40 hover:bg-blue-100 shadow-strong transition-smooth w-auto max-w-[240px] sm:max-w-none"
             >
               <span className="text-gradient-cta">Get Started</span>
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
+              <ArrowRight className="ml-2 h-5 w-5 text-primary group-hover:translate-x-1 transition-smooth" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="glass-card neo-card hover:neo-card-inset border-primary/30 hover:border-primary transition-smooth"
+              className="glass-card neo-card hover:neo-card-inset border-primary/30 hover:border-primary transition-smooth w-auto max-w-[240px] sm:max-w-none"
             >
               View Our Work
             </Button>

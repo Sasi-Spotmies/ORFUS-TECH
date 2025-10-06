@@ -115,10 +115,10 @@ const Contact = () => {
 
               <Button
                 type="submit"
-                className="w-full h-12 bg-gradient-primary hover:opacity-90 text-white group shadow-medium"
+                className="w-full h-12 bg-gradient-primary hover:opacity-90 text-gradient-cta  group shadow-medium"
               >
                 Send Message
-                <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
+                <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 text-blue-900 transition-smooth" />
               </Button>
             </form>
           </motion.div>
